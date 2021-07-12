@@ -4,21 +4,21 @@ import {Component} from 'react'
 
 class ShowHide extends Component {
   state = {
-    firstCard: 'none',
-    lastCard: 'none',
+    firstCard: false,
+    lastCard: false,
   }
 
   firstName = () => {
     const {firstCard} = this.state
     this.setState(() => ({
-      firstCard: firstCard === 'none' ? 'block' : 'none',
+      firstCard: !firstCard,
     }))
   }
 
   lastName = () => {
     const {lastCard} = this.state
     this.setState(() => ({
-      lastCard: lastCard === 'none' ? 'block' : 'none',
+      lastCard: !lastCard,
     }))
   }
 
@@ -36,17 +36,13 @@ class ShowHide extends Component {
             >
               Show/Hide Firstname
             </button>
-            <p className="name-card" style={{display: firstCard}}>
-              Joe
-            </p>
+            {firstCard ? <p className="name-card"> Joe</p> : ''}
           </div>
           <div className="card-container">
             <button onClick={this.lastName} className="btn-style" type="button">
               Show/Hide Lastname
             </button>
-            <p className="name-card" style={{display: lastCard}}>
-              Jones
-            </p>
+            {lastCard ? <p className="name-card">Jonas</p> : ''}
           </div>
         </div>
       </div>
