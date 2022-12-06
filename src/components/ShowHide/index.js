@@ -10,15 +10,15 @@ class ShowHide extends Component {
 
   firstName = () => {
     const {firstCard} = this.state
-    this.setState(() => ({
-      firstCard: !firstCard,
+    this.setState((prevState) => ({
+      firstCard: !prevState.firstCard,
     }))
   }
 
   lastName = () => {
     const {lastCard} = this.state
-    this.setState(() => ({
-      lastCard: !lastCard,
+    this.setState((prevState) => ({
+      lastCard: !prevState.lastCard,
     }))
   }
 
